@@ -1,5 +1,6 @@
 import sys
-sys.path.append("../../../musev")
+sys.path.append("../../../MuseV")
+# sys.path.append("../../musev")
 
 import argparse
 import copy
@@ -27,7 +28,7 @@ from mmcm.utils.task_util import fiss_tasks, generate_tasks as generate_tasks_fr
 from mmcm.vision.utils.data_type_util import is_video, is_image, read_image_as_5d
 from mmcm.utils.str_util import clean_str_for_save
 from mmcm.vision.data.video_dataset import DecordVideoDataset
-from musev.auto_prompt.util import generate_prompts
+# from musev.auto_prompt.util import generate_prompts
 
 from musev.models.controlnet import PoseGuider
 from musev.models.facein_loader import load_facein_extractor_and_proj_by_name
