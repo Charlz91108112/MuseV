@@ -4,6 +4,7 @@ sys.path.append("../../../musev")
 import argparse
 import copy
 import os
+print("The current working dir: ", os.getcwd())
 from pathlib import Path
 import logging
 from collections import OrderedDict
