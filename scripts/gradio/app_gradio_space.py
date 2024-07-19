@@ -232,9 +232,9 @@ with gr.Blocks(css=css) as demo:
                 )
                 video_length = gr.Number(
                     label="Video Length (Total number of frames in a video)",
-                    value=12,
+                    value=200,
                 )
-                fps = gr.Number(label="Generate Video FPS", value=6)
+                fps = gr.Number(label="Generate Video FPS", value=10)
                 gr.Markdown(
                     (
                         "If W&H is -1, then use the Reference Image's Size. Size of target video is $(W, H)*img\_edge\_ratio$. \n"
