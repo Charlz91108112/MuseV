@@ -196,10 +196,10 @@ with gr.Blocks(css=css) as demo:
                     value=-1,
                 )
                 video_length = gr.Number(
-                    label="Video Length(need smaller than 144,If you want to be able to generate longer videos, run it locally )",
-                    value=12,
+                    label="Video Length(Total number of frames in a video)",
+                    value=200,
                 )
-                fps = gr.Number(label="Generate Video FPS", value=6)
+                fps = gr.Number(label="Generate Video FPS", value=10)
                 gr.Markdown(
                     (
                         "If W&H is -1, then use the Reference Image's Size. Size of target video is $(W, H)*img\_edge\_ratio$. \n"
@@ -247,9 +247,9 @@ with gr.Blocks(css=css) as demo:
             outputs=[img_edge_ratio_infact, out_w, out_h],
         )
 
-        video_length.change(
-            fn=limit_length, inputs=[video_length], outputs=[video_length]
-        )
+        # video_length.change(
+        #     fn=limit_length, inputs=[video_length], outputs=[video_length]
+        # )
 
         btn1.click(
             fn=hf_online_t2v_inference,
@@ -345,9 +345,9 @@ with gr.Blocks(css=css) as demo:
                 inputs=[image, w, h, img_edge_ratio],
                 outputs=[img_edge_ratio_infact, out_w, out_h],
             )
-            video_length.change(
-                fn=limit_length, inputs=[video_length], outputs=[video_length]
-            )
+            # video_length.change(
+            #     fn=limit_length, inputs=[video_length], outputs=[video_length]
+            # )
             btn2.click(
                 fn=hg_online_v2v_inference,
                 inputs=[
